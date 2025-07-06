@@ -1,0 +1,5100 @@
+{
+    "os": {
+        "type": "ubuntu",
+        "applications": [
+            {
+                "name": "apps_chatwoot_chatwoot-latest-ubuntu24.04-postgres-redis-nginx-docker",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_cloudpanel_cloudpanel_latest-ubuntuserver24.04-nginx-mysql-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": false,
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_cloudron_cloudron-latest-ubuntuserver-22.04",
+                "services": [
+                    {
+                        "name": "cloudron",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": false,
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_cloudron_cloudron-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "cloudron",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 433,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": false,
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_clustercontrol_clustercontrol-latest-ubuntuserver-20.04-phpmyadmin-nginx-mysqlserver-8.0-php-8.1-phpfpm",
+                "services": [
+                    {
+                        "name": "apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 433,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mariadb",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_clustercontrol_clustercontrol-latest-ubuntuserver-24.04-php7.4-apache2-mariadb",
+                "services": [
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mariadb",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_cyberpanel_cyberpanel-latest-openlitespeed-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "lsws",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 7080,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 7080,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8090,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_cyberpanel_cyberpanel-latest-openlitespeed-ubuntuserver-22.04",
+                "services": [
+                    {
+                        "name": "lsws",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 7080,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 7080,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8090,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_directus_directus-6.4.9-ubuntuserver-24.04-apache-php-7.2-mysql8",
+                "services": [
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.2-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_django_django-latest-ubuntuserver-22.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "django",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8000,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_django_django-latest-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "django",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8000,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_dokku_dokku-0.24.8-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_dokuwiki_dokuwiki-latest-ubuntuserver-22.04-nginx-php-8.3-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.3-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_dokuwiki_dokuwiki-latest-ubuntuserver-24.04-nginx-php-8.3-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx ",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.3-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_grafana_grafana-latest-ubuntuserver-20.04-nginx",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "grafana-server",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 3000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_grafana_grafana-latest-ubuntuserver-24.04-nginx",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "grafana-server",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 3000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_harbor_harbor-latest-ubuntu24.04-nginx-postgres-redis",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "postgres",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 5432,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "redis",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 6379,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 2376,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 4443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 22,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_ispconfig_ispconfig-3.2-ubuntuserver-20.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_ispconfig_ispconfig-3.2-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_jenkins_jenkins-latest-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_jenkins_jenkins-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_jitsi_jitsi-latest-ubuntuserver-22.04",
+                "services": [
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 10000,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_jitsi_jitsi-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 10000,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_joomla_joomla-latest-ubuntuserver-20.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_joomla_joomla-latest-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx ",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_magento-2.4.7-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-8.1-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.1-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "elasticsearch",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 9200,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_magento_magento-2.4.6-ubuntuserver-22.04-nginx-mysqlserver-8.0-php-8.1-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.0-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "elasticsearch",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 9200,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_matomo_matomo-latest-ubuntuserver-20.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_matomo_matomo-latest-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_mattermost_mattermost-5-ubuntuserver-20.04-mysqlserver-8.0",
+                "services": [
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mattermost",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8065,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8065,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_mattermost_mattermost-5-ubuntuserver-24.04-mysqlserver-8.0",
+                "services": [
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mattermost",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8065,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8065,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_mediawiki_mediawiki-1.3x-ubuntuserver-20.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "phpmyadmin",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_mediawiki_mediawiki-1.42-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-8.3-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.3-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "phpmyadmin",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_minecraft_minecraft-latest-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "minecraft@survival",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 25565,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 25565,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_minecraft_minecraft-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "minecraft@survival",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 25565,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 25565,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_moodle_moodle-4.1.2-ubuntuserver-20.04-nginx-mysqlserver-8.0-php-8.0-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.0-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_moodle_moodle-4.4.2-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-8.0-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.3-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_nextcloud_nextcloud-latest-ubuntuserver-22.04-nginx-mysqlserver-8.0-php-8.1-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.1-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_nextcloud_nextcloud-latest-ubuntuserver-22.04-nginx-mysqlserver-8.0-php-8.1-phpfpm-collabora",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.1-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_nextcloud_nextcloud-latest-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-8.1-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.1-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_nextcloud_nextcloud-latest-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-8.1-phpfpm-collabora",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.1-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_odoo_odoo-17-ubuntuserver-22.04",
+                "services": [
+                    {
+                        "name": "postgres",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 5432,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "odoo17",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8069,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8069,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_odoo_odoo-17-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "postgres",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 5432,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "odoo17",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8069,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8069,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_openproject_openproject-latest-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_passbolt_passbolt-3.0.1-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "passbolt",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 2376,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_passbolt_passbolt-4.0.0-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "passbolt",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 2376,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_phpbb-3.3-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "myphpadmin",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_phpbb_phpbb-3.3.3-ubuntuserver-20.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "phpmyadmin",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_phpmyadmin_phpmyadmin-latest-ubuntuserver-20.04-nginx-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "phpmyadmin",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_phpmyadmin_phpmyadmin-latest-ubuntuserver-24.04-nginx-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "phpmyadmin",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_plesk_plesk-latest-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8880,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_plesk_plesk-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8880,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_prometheus-2.54.0-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "prometheus",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 9090,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 9090,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_prometheus_prometheus-2.29.2-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "prometheus",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 9090,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 9090,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_pureftpd_pureftpd-latest-osrepo-ubuntuserver-18.04",
+                "services": [
+                    {
+                        "name": "pure-ftpd",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_pureftpd_pureftpd-latest-osrepo-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "pure-ftpd",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_python_python-3.12-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_python_python-3.9-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_redmine_redmine-5.1.3-ubuntuserver-22.04-mysqlserver-8.0",
+                "services": [
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_redmine_redmine-5.1.3-ubuntuserver-24.04-mysqlserver-8.0",
+                "services": [
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_rocketchat_rocketchat-latest-ubuntuserver-20.04-nginx-mongodb-4.4-nodejs14",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mongodb",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 27017,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "rocketchat",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 3000,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 27017,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_teamspeak_teamspeak-latest-ubuntuserver24.04",
+                "services": [
+                    {
+                        "name": "teamspeak",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 9987,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 9987,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 10011,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 30033,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_uptimekuma_uptimekuma-latest-docker-nginx-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3001,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_uptimekuma_uptimekuma-latest-docker-nginx-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3001,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_vesta_vesta-latest-ubuntuserver-18.04-apache",
+                "services": [
+                    {
+                        "name": "apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8083,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_vesta_vesta-latest-ubuntuserver-18.04-nginx-phpfpm",
+                "services": [
+                    {
+                        "name": "php8.1-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8083,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_webmin_webmin-latest-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 433,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 10000,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_webmin_webmin-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 10000,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_wordpress_wordpress-latest-ubuntuserver-22.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_wordpress_wordpress-latest-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_wordpress_wordpress-multisite-latest-ubuntuserver-22.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "\u05de\u05e2nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_wordpress_wordpress-multisite-latest-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_zabbix_zabbix-5.4-ubuntuserver-20.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "\u05e9\u05e4apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "zabbix-server",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 10051,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 10050,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 10051,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_zabbix_zabbix-7.0-ubuntuserver-24.04-nginx-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.3-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "zabbix-server",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 10051,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 10050,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 10051,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_zentyal_zentyal-7.0-ubuntuserver-18.04",
+                "services": [
+                    {
+                        "name": "systemd-resolved",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_zentyal_zentyal-7.0-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "systemd-resolved",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_zulip_zulip-5.6-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "apps_zulip_zulip-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_ansible_ansible-latest-ubuntuserver-22.04",
+                "services": [
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_ansible_ansible-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_caddy_caddy-latest-ubuntuserver-22.04-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "caddy",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_caddy_caddy-latest-ubuntuserver-24.04-mysqlserver-8.0-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "caddy",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_clickhouse_clickhouse-latest-ubuntuserver-22.04",
+                "services": [
+                    {
+                        "name": "clickhouse-server",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 9000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 9000,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8123,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_clickhouse_clickhouse-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "clickhouse-server",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 9000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 9000,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8123,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_docker_docker-ready-ubuntuserver-22.04",
+                "services": [
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 2376,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "containerd",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 10010,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_docker_docker-ready-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 2376,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_elasticsearch_elasticsearch-7.12-ubuntuserver-22.04-nginx-latest",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "elasticsearch",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8881,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "kibana",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8882,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_elasticsearch_elasticsearch-8.15-ubuntuserver-24.04-nginx-latest",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "elasticsearch",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8881,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "kibana",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8882,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_haproxy_haproxy-2.4-ubuntuserver-22.04",
+                "services": [
+                    {
+                        "name": "haproxy",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8404,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8404,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_haproxy_haproxy-2.9.9-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "haproxy",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8404,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 8404,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_lamp_lamp-ubuntuserver-22.04-apache-2.4-mysqlserver-8.0-php-8.1-phpfpm",
+                "services": [
+                    {
+                        "name": "apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.1-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "phpmyadmin",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_lamp_lamp-ubuntuserver-24.04-apache-2.4-mysqlserver-8.0-php-8.1-phpfpm",
+                "services": [
+                    {
+                        "name": "apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.1-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "phpmyadmin",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_laravel_laravel-latest-ubuntuserver-20.04-apache-mysqlserver-8.0-php-8.1-phpfpm",
+                "services": [
+                    {
+                        "name": "apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.2-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_laravel_laravel-latest-ubuntuserver-24.04-apache-mysqlserver-8.0-php-8.1-phpfpm",
+                "services": [
+                    {
+                        "name": "apache2",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.2-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_lemp_lemp-ubuntuserver-22.04-nginx-latest-mysqlserver-8.0-php-8.1-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.1-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "phpmyadmin",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_lemp_lemp-ubuntuserver-24.04-nginx-latest-mysqlserver-8.0-php-8.1-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.1-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "phpmyadmin",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_memcached_memcached-latest-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "memcached",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 11211,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_memcached_memcached-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "memcached",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 11211,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_minio_minio-latest-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "minio",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 9000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 9000,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 9001,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_minio_minio-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "minio",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 9000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 9000,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 9001,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_mongodb_mongodb-3.4-ubuntuserver-18.04",
+                "services": [
+                    {
+                        "name": "ntp",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 123,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mongod",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 27017,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_mongodb_mongodb-4.4-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "ntp",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 123,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mongod",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 27017,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_mysql_mysqlserver-8.0-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "ntp",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 123,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_mysql_mysqlserver-8.0-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "ntp",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 123,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_nfs_nfsserver-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "nfs-kernel-server",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 2049,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_nfs_nfsserver-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "nfs-kernel-server",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 2049,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_nginx_nginx-latest-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_nginx_nginx-latest-ubuntuserver-20.04-php-7.4-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php7.4-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_nginx_nginx-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_nginx_nginx-latest-ubuntuserver-24.04-php-8.3-phpfpm",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "php8.3-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_nodejs_nodejs-17-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "nodejs",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_nodejs_nodejs-22-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "nodejs",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_openvpn_openvpn-latest-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "ntp",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 123,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "openvpnas",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 943,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_openvpn_openvpn-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "ntp",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 123,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "openvpnas",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 943,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_php_phpfpm-8.0-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "php8.0-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_php_phpfpm-8.3-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "php8.3-fpm",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_postgresql_postgresql-latest-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "postgres",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 5432,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_postgresql_postgresql-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "postgres",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 5432,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_rabbitmq_rabbitmq-3.12-ubuntuserver-24.04-nginx-latest",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "rabbitmq_management",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 15671,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "rabbitmq-server",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 5671,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_rabbitmq_rabbitmq-3.8-ubuntuserver-20.04-nginx-latest",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "rabbitmq_management",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 15671,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "rabbitmq-server",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 5671,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_redis_redisserver-6.0-offirepolatest-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "ntp",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 123,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "redis-server",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 6379,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_postgresql_postgresql-latest-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "ntp",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 123,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "redis-server",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 6379,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_rubyonrails_rubyonrails-6.1.3-ubuntuserver-20.04-mysqlserver-8.0-ruby-3.0-nodejs-14",
+                "services": [
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "nodejs",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ruby",
+                        "status": "false"
+                    },
+                    {
+                        "name": "rails",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_rubyonrails_rubyonrails-6.1.3-ubuntuserver-20.04-ruby-3.0-nodejs-14",
+                "services": [
+                    {
+                        "name": "nodejs",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ruby",
+                        "status": "false"
+                    },
+                    {
+                        "name": "rails",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_rubyonrails_rubyonrails-7.2.1-ubuntuserver-24.04-mysqlserver-8.0-ruby-3.2.3-nodejs-22",
+                "services": [
+                    {
+                        "name": "mysql",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3306,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "nodejs",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ruby",
+                        "status": "false"
+                    },
+                    {
+                        "name": "rails",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_rubyonrails_rubyonrails-7.2.1-ubuntuserver-24.04-ruby-3.2.3-nodejs-22",
+                "services": [
+                    {
+                        "name": "nodejs",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 3000,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ruby",
+                        "status": "false"
+                    },
+                    {
+                        "name": "rails",
+                        "status": "false"
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_tomcat_tomcat-10-ubuntuserver-24.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "tomcat10",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 9090,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_tomcat_tomcat-9-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "tomcat9",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 9090,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_traefik_traefik_latest-ubuntu24.04-docker",
+                "services": [
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8080,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_kubernetes_kubernetes-latest-rancher-2.3-ubuntuserver-18.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8080,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_kubernetes_kubernetes-latest-rancher-2.6.2-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8080,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_rancher_rancher-2.3-ubuntuserver-18.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8080,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "service_rancher_rancher-2.6.2-ubuntuserver-20.04",
+                "services": [
+                    {
+                        "name": "nginx",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "docker",
+                        "status": "false",
+                        "ports": [
+                            {
+                                "port": 8080,
+                                "protocol": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ufw",
+                        "enabled": "false",
+                        "ports": [
+                            {
+                                "port": 80,
+                                "protocol": ""
+                            },
+                            {
+                                "port": 443,
+                                "protocol": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

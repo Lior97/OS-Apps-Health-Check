@@ -1,0 +1,347 @@
+pipeline {
+    agent { label "Images" }
+    
+    environment {
+        SERVER_CREATE_PATH = "/opt/utils/cwmCLI"
+        OS_MAIN_CHECK = "${WORKSPACE}/../OS-Trigger/installer-os-monitoring/os_check.py"
+        APP_MAIN_CHECK = "${WORKSPACE}/../Installer-Trigger/installer-os-monitoring/main.py"
+        MACHINE_NAME = "OMC-InstallerOS-Automation-${BUILD_NUMBER}"
+        TIME = 90
+    }
+
+    stages {
+        stage('Create Config JSON') {
+            steps {
+                script {
+                    // Define the reusable function for creating the config JSON
+                    def createConfig = { credentials ->
+                        withCredentials(credentials) {
+
+                            currentBuild.displayName = "${params.IMAGE}"
+
+                            echo "Creating Config JSON for Environment: ${params.ENV}"
+
+                            // Declare configCommand outside the if-else block
+                            def configCommand = ""
+
+                            // Assign the value based on the environment
+                            if (params.ENV == "prod") {
+                                configCommand = """
+                                ${SERVER_CREATE_PATH}/main.py -c config.json install config \
+                                --url ${params.URL} \
+                                --api-key ${API_KEY} \
+                                --secret-key ${SECRET_KEY} \
+                                --output-json \
+                                --cmdid 0
+                                """
+                            } else {
+                                configCommand = """
+                                ${SERVER_CREATE_PATH}/main.py -c config.json install config \
+                                --url ${params.URL} \
+                                --api-key ${API_KEY} \
+                                --secret-key ${SECRET_KEY} \
+                                --environment ${params.ENV} \
+                                --output-json \
+                                --cmdid 0
+                                """
+                            }
+
+                            sh(script: configCommand)
+                            echo "Config command executed successfully."
+                        }
+                    }
+
+                    // Choose credentials based on environment
+                    if (params.ENV == 'develop') {
+                        createConfig([
+                            string(credentialsId: 'API_KEY', variable: 'API_KEY'),
+                            string(credentialsId: 'SECRET_KEY', variable: 'SECRET_KEY')
+                        ])
+                    } else {
+                        createConfig([
+                            string(credentialsId: 'PROD_API_KEY', variable: 'API_KEY'),
+                            string(credentialsId: 'PROD_SECRET_KEY', variable: 'SECRET_KEY')
+                        ])
+                    }
+                }
+            }
+        }
+
+        stage('Create VM') {
+            steps {
+                script {
+                    withCredentials([
+                        string(credentialsId: 'INSTALLER_PASSWORD', variable: 'PASSWORD')
+                    ]) {
+                        echo "Creating VM with Installer: ${params.IMAGE}"
+                        // Step 1: Extract Image UUID and create the server
+                        def listCommand = """
+                            ${SERVER_CREATE_PATH}/main.py -c config.json hdlib list --datacenter ${params.DC} --filter ${params.IMAGE} > disk
+                        """
+                        sh(script: listCommand)
+
+                        echo "listCommand executed successfully"
+
+                        def imageUUID = sh(script: "cat disk | jq .[].id", returnStdout: true).trim()
+
+                        if (!imageUUID) {
+                            error "Failed to extract Image UUID"
+                        }
+                        echo "Extracted Image Identifier: ${imageUUID}"
+
+                        // Step 2: Create the server
+                        def createCommand = """
+                                ${SERVER_CREATE_PATH}/main.py -c config.json servers create \
+                                --datacenter ${params.DC} \
+                                --diskImageId ${imageUUID} \
+                                --names ${MACHINE_NAME} \
+                                --password ${PASSWORD} \
+                                --disks ${params.DISKSIZE} \
+                                --cpuCores ${params.CPU} \
+                                --memory ${params.RAM} > tasks
+                            """
+                        sh(script: createCommand)
+
+                        // Step 3 Extract Task ID and Wait till Completion
+                        def task = sh(script: "cat tasks | jq .[0]", returnStdout: true).trim()
+                        sh """${SERVER_CREATE_PATH}/main.py queue wait -id ${task} -t 1500 -i 60"""
+
+                        // Step 4 Extract Machine INFO
+                        def serverListCommand = "${SERVER_CREATE_PATH}/main.py -c config.json servers list -f ${MACHINE_NAME} > listed"
+                        def serverListOutput = sh(script: serverListCommand, returnStdout: true).trim()
+                        def machineUUID = sh(script: "cat listed | jq -r .[].id", returnStdout: true).trim()
+
+                        if (!imageUUID || imageUUID == "null") {
+                            error "Failed to extract Image UUID"
+                        }
+
+                        def serverListNetwork = "${SERVER_CREATE_PATH}/main.py -c config.json server --uuid ${machineUUID} network list > network"
+                        def serverNetworkOutput = sh(script: serverListNetwork, returnStdout: true).trim()
+
+                        def machineIP = sh(script: "cat listed | jq -r '.[0].ips[0]'", returnStdout: true).trim()
+                        def machineMAC = sh(script: "cat network | jq -r '.nics[].mac'", returnStdout: true).trim()
+                        def machineGateway = sh(script: "cat network | jq -r '.nics[] | select(.gateway != null) | .gateway'", returnStdout: true).trim()
+                        def machineSubnet = sh(script: "cat network | jq -r '.nics[] | \"\\(.subnetMask // empty)\"'", returnStdout: true).trim()
+
+                        if (!machineIP) {
+                            error "Failed to extract Machine IP"
+                        }
+                        if (!machineMAC) {
+                            error "Failed to extract Machine MAC"
+                        }
+
+                        if (!machineGateway) {
+                            error "Failed to extract Machine Gateway"
+                        }                        
+                        if (!machineSubnet) {
+                            error "Failed to extract Machine Subnet"
+                        }
+
+                        env.MACHINE_MAC = machineMAC
+                        env.MACHINE_IP = machineIP
+                        env.MACHINE_UUID = machineUUID
+                        env.MACHINE_SUBNET = machineSubnet
+                        env.MACHINE_GATEWAY = machineGateway
+                    }
+                }
+            }
+        }
+
+        stage('Clone VM') {
+            when {
+                expression { params.APP_OR_OS != 'app' }
+            }
+            steps {
+                script {
+                    withCredentials([
+                        string(credentialsId: 'INSTALLER_PASSWORD', variable: 'PASSWORD')
+                    ]) {
+                        echo "Cloning VM: ${MACHINE_NAME}"
+
+                        // Step 1: Clone the original machine
+                        def cloneCommand = """
+                            ${SERVER_CREATE_PATH}/main.py server --uuid "${env.MACHINE_UUID}" clone --password ${PASSWORD} > clone_task
+                        """
+                        sh(script: cloneCommand)
+
+			// Step 2: Extract Task ID and Wait till Completion
+                        def cloneTask = sh(script: "cat clone_task | jq .[0]", returnStdout: true).trim()
+                        sh """${SERVER_CREATE_PATH}/main.py queue wait -id ${cloneTask} -t 1500 -i 60"""
+
+                        // Step 3: Extract Cloned Machine INFO
+                        def clonedMachineName = "${MACHINE_NAME}-clone"
+                        def serverListCommand = "${SERVER_CREATE_PATH}/main.py -c config.json servers list -f ${clonedMachineName} > cloned_listed"
+                        sh(script: serverListCommand)
+
+			def clonedMachineUUID = sh(script: "cat cloned_listed | jq -r .[].id", returnStdout: true).trim()
+ 
+	      		if (!clonedMachineUUID || clonedMachineUUID == "null") {
+                            error "Failed to extract Cloned Machine UUID"
+                        }
+
+                        def serverListNetwork = "${SERVER_CREATE_PATH}/main.py -c config.json server --uuid ${clonedMachineUUID} network list > cloned_network"
+                        sh(script: serverListNetwork)
+
+                        def clonedMachineIP = sh(script: "cat cloned_listed | jq -r '.[0].ips[0]'", returnStdout: true).trim()
+                        def clonedMachineMAC = sh(script: "cat cloned_network | jq -r '.nics[].mac'", returnStdout: true).trim()
+                        def clonedMachineGateway = sh(script: "cat cloned_network | jq -r '.nics[] | select(.gateway != null) | .gateway'", returnStdout: true).trim()
+                        def clonedMachineSubnet = sh(script: "cat cloned_network | jq -r '.nics[] | \"\\(.subnetMask // empty)\"'", returnStdout: true).trim()
+
+                        if (!clonedMachineIP) {
+                            error "Failed to extract Cloned Machine IP"
+                        }
+                        if (!clonedMachineMAC) {
+                            error "Failed to extract Cloned Machine MAC"
+                        }
+                        if (!clonedMachineGateway) {
+                            error "Failed to extract Cloned Machine Gateway"
+                        }                        
+                        if (!clonedMachineSubnet) {
+                            error "Failed to extract Cloned Machine Subnet"
+                        }
+
+                        // Store cloned machine details in environment variables
+                        env.CLONED_MACHINE_MAC = clonedMachineMAC
+                        env.CLONED_MACHINE_IP = clonedMachineIP
+                        env.CLONED_MACHINE_UUID = clonedMachineUUID
+                        env.CLONED_MACHINE_SUBNET = clonedMachineSubnet
+                        env.CLONED_MACHINE_GATEWAY = clonedMachineGateway
+                        env.CLONED_MACHINE_NAME = clonedMachineName
+                    }
+                }
+            }
+        }
+
+        stage('Run Service Checks') {
+            steps {
+                script {
+                    withCredentials([
+                        string(credentialsId: 'INSTALLER_PASSWORD', variable: 'PASSWORD')
+                    ]) {
+                        if (params.APP_OR_OS == "app") { 
+                            // Only check the original machine for app
+                            echo "Running service checks on VM: ${params.IMAGE}"
+                            def result = sh(script: """
+                                $APP_MAIN_CHECK \
+                                --host ${env.MACHINE_IP} \
+                                --name ${params.IMAGE} \
+                                --user ${params.USER} \
+                                --password ${PASSWORD}
+                            """, returnStdout: true).trim()
+                            echo "Service Check Results: \n${result}"
+                        } else {
+                            // Run OS checks in parallel for both machines
+                            parallel(
+                                "Original Machine": {
+                                    echo "Running OS checks on Original VM: ${params.IMAGE}"
+                                    def isWindows = params.IMAGE.toLowerCase().contains("win")
+                                    def result
+
+                                    if (isWindows) {
+                                        result = sh(script: """
+                                            $OS_MAIN_CHECK \
+                                            --uuid ${env.MACHINE_UUID} \
+                                            --mac ${env.MACHINE_MAC} \
+                                            --ip ${env.MACHINE_IP} \
+                                            --machine_name ${MACHINE_NAME} \
+                                            --password ${PASSWORD} \
+                                            --network ${params.NETWORK} \
+                                            --subnet ${env.MACHINE_SUBNET} \
+                                            --gateway ${env.MACHINE_GATEWAY} \
+                                            --disks ${params.DISKSIZE} \
+                                            --dns ${params.DNS} \
+                                            --lan ${params.LAN} \
+                                            --ostype windows
+                                        """, returnStdout: true).trim()
+                                    } else {
+                                        result = sh(script: """
+                                            $OS_MAIN_CHECK \
+                                            --uuid ${env.MACHINE_UUID} \
+                                            --mac ${env.MACHINE_MAC} \
+                                            --ip ${env.MACHINE_IP} \
+                                            --machine_name ${MACHINE_NAME} \
+                                            --password ${PASSWORD} \
+                                            --network ${params.NETWORK} \
+                                            --subnet ${env.MACHINE_SUBNET} \
+                                            --gateway ${env.MACHINE_GATEWAY} \
+                                            --disks ${params.DISKSIZE} \
+                                            --dns ${params.DNS} \
+                                            --lan ${params.LAN}
+                                        """, returnStdout: true).trim()
+                                    }
+                                    echo "Original Machine OS Check Results: \n${result}"
+                                },
+                                "Cloned Machine": {
+                                    echo "Running OS checks on Cloned VM: ${params.IMAGE}"
+                                    def isWindows = params.IMAGE.toLowerCase().contains("win")
+                                    def result
+
+                                    if (isWindows) {
+                                        result = sh(script: """
+                                            $OS_MAIN_CHECK \
+                                            --uuid ${env.CLONED_MACHINE_UUID} \
+                                            --mac ${env.CLONED_MACHINE_MAC} \
+                                            --ip ${env.CLONED_MACHINE_IP} \
+                                            --machine_name ${env.CLONED_MACHINE_NAME} \
+                                            --password ${PASSWORD} \
+                                            --network ${params.NETWORK} \
+                                            --subnet ${env.CLONED_MACHINE_SUBNET} \
+                                            --gateway ${env.CLONED_MACHINE_GATEWAY} \
+                                            --disks ${params.DISKSIZE} \
+                                            --dns ${params.DNS} \
+                                            --lan ${params.LAN} \
+                                            --ostype windows
+                                        """, returnStdout: true).trim()
+                                    } else {
+                                        result = sh(script: """
+                                            $OS_MAIN_CHECK \
+                                            --uuid ${env.CLONED_MACHINE_UUID} \
+                                            --mac ${env.CLONED_MACHINE_MAC} \
+                                            --ip ${env.CLONED_MACHINE_IP} \
+                                            --machine_name ${env.CLONED_MACHINE_NAME} \
+                                            --password ${PASSWORD} \
+                                            --network ${params.NETWORK} \
+                                            --subnet ${env.CLONED_MACHINE_SUBNET} \
+                                            --gateway ${env.CLONED_MACHINE_GATEWAY} \
+                                            --disks ${params.DISKSIZE} \
+                                            --dns ${params.DNS} \
+                                            --lan ${params.LAN}
+                                        """, returnStdout: true).trim()
+                                    }
+                                    echo "Cloned Machine OS Check Results: \n${result}"
+                                }
+                            )
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Delete Virtual Machine') {
+            steps {
+                script {
+                    echo "Deleting Original VM: ${MACHINE_NAME}"
+                    def deleteOriginalCommand = """
+                        ${SERVER_CREATE_PATH}/main.py -c config.json servers remove -f ${env.MACHINE_NAME}
+                    """
+                    sh(script: deleteOriginalCommand)
+                    }
+                }
+            }
+
+        }
+
+
+    post {
+        always {
+            archiveArtifacts artifacts: "${MACHINE_NAME}_results.csv,${CLONED_MACHINE_NAME}_results.csv", allowEmptyArchive: true
+            echo "Artifacts archived: ${MACHINE_NAME}_results.csv, ${CLONED_MACHINE_NAME}_results.csv"
+        }
+        success {
+            echo "Server creation, cloning (if applicable), and Service/OS Checks executed successfully."
+        }
+        failure {
+            echo "Pipeline failed. Please check the logs."
+        }
+    }
+}

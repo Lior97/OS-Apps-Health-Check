@@ -1,0 +1,99 @@
+pipeline {
+    agent { label "Images" }
+
+    environment {
+        APP_OR_OS = "app"
+    }    
+
+    stages {
+        stage('Validate params') {
+            steps {
+                script {
+                    // Validate INSTALLER parameter
+                    if (!params.INSTALLER) {
+                        error("INSTALLER is empty. You must specify at least one image.")
+                    } else {
+                        echo "INSTALLER parameter is selected with value: ${params.INSTALLER}"
+                    }
+                }
+            }
+        }
+        
+        stage('Cloning Repo') {
+            steps {
+                // Clone the installer-os-monitoring repository into a directory
+                dir('installer-os-monitoring') {
+                    git branch: 'main', changelog: false, credentialsId: 'Git-rndbot', poll: false, url: 'https://git.cloudwm-dev.com/DevOps/installer-os-monitoring.git'
+                }
+        
+                echo "Repositories cloned successfully into their respective directories!"
+            }
+        }
+        
+        stage('Trigger Server Create') {
+            steps {
+                script {
+                    echo "Triggering Server Create Pipeline"
+                    def results = [:]
+
+                    // Split the images into batches of 3
+                    def images = "${params.INSTALLER}".split(',').collect { it.trim() }.findAll { it }
+                    def batches = images.collate(3) // Group images into batches of 3
+
+                    echo "Processing in batches: ${batches}"
+
+                    batches.each { batch ->
+                        def parallelJobs = [:]
+
+                        batch.each { entry ->
+                            parallelJobs["Build-${entry}"] = {
+                                echo "Processing entry: ${entry}"
+
+                                // Trigger the 'Server Create' job with parameters
+                                def buildResult = null
+                                try {
+                                    def buildInfo = build job: 'Server_Create',
+                                          parameters: [
+                                              string(name: 'IMAGE', value: entry), 
+                                              string(name: 'APP_OR_OS', value: APP_OR_OS),
+                                              string(name: 'ENV', value: params.ENV),
+                                              string(name: 'DISKSIZE', value: params.DISKSIZE),
+                                              string(name: 'CPU', value: params.CPU),
+                                              string(name: 'RAM', value: params.RAM),
+                                              string(name: 'DC', value: params.DC),
+                                              string(name: 'URL', value: params.URL)
+                                          ],
+                                          propagate: false,
+                                          wait: true
+
+                                    buildResult = buildInfo.getResult()
+                                    echo "Build result for ${entry}: ${buildResult}"
+
+                                } catch (err) {
+                                    buildResult = 'FAILURE'
+                                    echo "Build failed for ${entry}: ${err}"
+                                }
+
+                                // Store the result
+                                results[entry] = buildResult
+                            }
+                        }
+
+                        // Run the batch in parallel
+                        parallel parallelJobs
+                    }
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo "Trigger Pipeline executed successfully."
+        }
+        failure {
+            echo "Trigger Pipeline failed. Please check the logs."
+        }
+    }
+}
+

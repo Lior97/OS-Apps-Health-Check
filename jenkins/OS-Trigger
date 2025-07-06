@@ -1,0 +1,101 @@
+pipeline {
+    agent { label "Images" }
+    
+    environment {
+        APP_OR_OS = "os"
+    }
+    
+    stages {
+        stage('Validate params') {
+            steps {
+                script {
+                    if (!params.OS) {
+                        error("OS is empty. You must specify at least one image.")
+                    } else {
+                        echo "OS parameter is selected with value: ${params.OS}"
+                    }
+                }
+            }
+        }
+        
+        stage('Cloning Repo') {
+            steps {
+                dir('installer-os-monitoring') {
+                    git branch: 'main', changelog: false, credentialsId: 'Git-rndbot', poll: false, url: 'https://git.cloudwm-dev.com/DevOps/installer-os-monitoring.git'
+                }
+                echo "Repositories cloned successfully into their respective directories!"
+            }
+        }
+        
+        stage('Trigger Server Create') {
+            steps {
+                script {
+                    echo "Triggering Server Create Pipeline"
+                    def results = [:]
+
+                    // Split the images
+                    def images = "${params.OS}".split(',').collect { it.trim() }.findAll { it }
+                    def parallelJobs = [:]
+                    def delay = 0
+
+                    images.each { entry ->
+                        def currentDelay = delay // Capture the current value of delay
+                        parallelJobs["Build-${entry}"] = {
+                            if (currentDelay > 0) {
+                                echo "Waiting ${currentDelay} seconds before starting ${entry}..."
+                                sleep(currentDelay)
+                            } else {
+                                echo "Starting ${entry} immediately..."
+                            }
+                            echo "Processing entry: ${entry}"
+
+                            // Trigger the 'Server Create' job with parameters
+                            def buildResult = null
+                            try {
+                                def buildInfo = build job: 'Server_Create',
+                                      parameters: [
+                                          string(name: 'IMAGE', value: entry), 
+                                          string(name: 'APP_OR_OS', value: APP_OR_OS),
+                                          string(name: 'ENV', value: params.ENV),
+                                          string(name: 'DISKSIZE', value: params.DISKSIZE),
+                                          string(name: 'CPU', value: params.CPU),
+                                          string(name: 'RAM', value: params.RAM),
+                                          string(name: 'DC', value: params.DC),
+                                          string(name: 'URL', value: params.URL),
+                                          string(name: 'NETWORK', value: params.NETWORK),
+                                          string(name: 'LAN', value: params.LAN),
+                                          string(name: 'DNS', value: params.DNS)
+                                      ],
+                                      propagate: false,
+                                      wait: true
+
+                                buildResult = buildInfo.getResult()
+                                echo "Build result for ${entry}: ${buildResult}"
+
+                            } catch (err) {
+                                buildResult = 'FAILURE'
+                                echo "Build failed for ${entry}: ${err}"
+                            }
+
+                            // Store the result
+                            results[entry] = buildResult
+                        }
+                        delay += 180 // Increment for the next image
+                    }
+
+                    // Run all jobs in parallel with staggered starts
+                    parallel parallelJobs
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo "Trigger Pipeline executed successfully."
+        }
+        failure {
+            echo "Trigger Pipeline failed. Please check the logs."
+        }
+    }
+}
